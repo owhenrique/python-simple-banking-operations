@@ -1,4 +1,4 @@
-# Challenge: Create a banking system
+# Simple Banking System
 
 <img style="max-width:60%; display:block; margin-right: auto; margin-left:auto" src="assets/bank.jpg"/>
 <br/>
@@ -35,7 +35,7 @@ The amounts should be printed in the format R$ XXX,XX, example: 1500,45 = R$ 150
 ### Installation
 - Clone this repository
     ```
-    git clone https://github.com/owhenrique/
+    git clone https://github.com/owhenrique/python-simple-banking-operations
     ```
 - 
 
