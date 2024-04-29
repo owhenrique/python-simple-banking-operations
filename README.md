@@ -1,5 +1,9 @@
 # Challenge: Create a banking system
 
+<img style="max-width:75%; display:block; margin-right: auto; margin-left:auto" src="assets/bank.jpg"/>
+<br/>
+<p style="text-align:center; font-size:15px">AI-generated image</p>
+
 ## General purpose
 
 Create a banking system with the following operations: withdraw, deposit and display statement.
@@ -23,3 +27,31 @@ The system must allow three withdrawals per day, with a limit of R$500 per withd
 This operation should list all deposits and withdrawals made. At the end of the list, it should display the current funds in the account. 
 
 The amounts should be printed in the format R$ XXX,XX, example: 1500,45 = R$ 1500,45
+
+## Getting Started
+
+### Prerequisites
+- 
+### Installation
+- Clone this repository
+    ```
+    git clone https://github.com/owhenrique/
+    ```
+- 
+
+### Testing
+- 
+
+## Built With
+<div align="center">
+
+![My Skills](https://skillicons.dev/icons?i=python)
+
+ </div>
+
+## Contact
+<div align="center">
+
+Paulo Henrique - @hen_abd1 - me.pauloalmeida@gmail.com
+
+</div>
