@@ -1,8 +1,8 @@
 # Challenge: Create a banking system
 
-<img style="max-width:75%; display:block; margin-right: auto; margin-left:auto" src="assets/bank.jpg"/>
+<img style="max-width:60%; display:block; margin-right: auto; margin-left:auto" src="assets/bank.jpg"/>
 <br/>
-<p style="text-align:center; font-size:15px">AI-generated image</p>
+<p align="center" style="text-align:center; font-size:15px">AI-generated image</p>
 
 ## General purpose
 
