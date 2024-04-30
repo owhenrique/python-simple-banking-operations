@@ -11,8 +11,14 @@ def Deposit(balance) -> float and str:
     value = float(input('''
         | Value: '''))
     
-    if value < 0:
-        print("Invalid deposit value!")
-        return
+    while value < 0:
+        print('''
+        |-------------------------------------------------|
+        | The deposit value is invalid, type a value      |
+        | above R$0.00!                                   |
+        |-------------------------------------------------|''')
+        
+        value = float(input('''
+        | Value: '''))
     
     return value, datetime.datetime.now().isoformat()

@@ -15,7 +15,17 @@ def Withdraw(daily_withdraws, account_balance, daily_withdrawal_limit) -> float 
     value = float(input('''
         | Value: '''))
     
-    if value > 500:
+    while value < 0:
+        print('''
+        |-------------------------------------------------|
+        | The withdrawal value is invalid, type a value   |
+        | above R$0.00!                                   |
+        |-------------------------------------------------|''')
+        
+        value = float(input('''
+        | Value: '''))
+    
+    while value > 500:
         print('''
         |-------------------------------------------------|
         | The withdrawal value exceeds the account's      |
@@ -25,7 +35,7 @@ def Withdraw(daily_withdraws, account_balance, daily_withdrawal_limit) -> float 
         value = float(input('''
         | Value: '''))
 
-    if value > account_balance:
+    while value > account_balance:
         print(f'''
         |-------------------------------------------------|
         | The withdrawal value exceeds the account's      |
