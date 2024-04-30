@@ -1,7 +1,7 @@
 from application.utils.clear_screen import ClearScreen
 
 def Menu() -> str:
-    ClearScreen()
+    #ClearScreen()
     print('''
         |-------------------------------------------------|
         | github/owhenrique Bank                          |
@@ -14,12 +14,13 @@ def Menu() -> str:
         | [s] - statement                                 |
         | [q] - quit                                      |
         |                                                 |
-        |-------------------------------------------------|''')
+        |-------------------------------------------------|''', end='')
 
-    menu_option = input()
+    menu_option = input('''
+        | Option: ''')
 
     while menu_option not in {'d', 'w', 's','q'}:
-        ClearScreen()
+        #ClearScreen()
         print('''
         |-------------------------------------------------|
         | github/owhenrique Bank                          |
@@ -32,7 +33,9 @@ def Menu() -> str:
         | [s] - statement                                 |
         | [q] - quit                                      |
         |                                                 |
-        |-------------------------------------------------|''')
-        menu_option = input()
+        |-------------------------------------------------|''', end='')
+        
+        menu_option = input('''
+            | Option: ''')
     
     return menu_option

@@ -1,29 +1,51 @@
 import sys
 from collections import namedtuple
 
+from domain.entities.user import User
 from application.utils.menu import Menu
 from application.usecases.statement_operation import Statement
+from application.usecases.deposit_operation import Deposit
+from application.usecases.withdrawal_operation import Withdraw
 
 def main():
+
+    user = User(0, 500, 0, 3)
+    # user.statement[0]['deposits'].append({'date':'2024-04-29T02:36:55.437668', 'value':1200.45})
+    # user.statement[0]['deposits'].append({'date':'2024-04-29T02:36:55.437668', 'value':1200.45})
+    # user.statement[0]['deposits'].append({'date':'2024-04-29T02:36:55.437668', 'value':1200.45})
+    # user.statement[1]['withdrawals'].append({'date':'2024-04-29T02:36:55.437668', 'value':1200.45})
+    
     menu_option = Menu()
+    
     while menu_option != 'q':
         if menu_option == 's':
-            Deposit = namedtuple('Deposit', ['date', 'value'])
-            Withdraw = namedtuple('Withdraw', ['date', 'value'])
-            deposits = [
-                Deposit(date='2024-04-29T02:36:55.437668', value=1200.45),
-                Deposit(date='2024-04-29T02:36:55.437668', value=180.45)
-            ]
+            Statement(user.statement[0]['deposits'], user.statement[1]['withdrawals'], user.balance)
+        
+        elif menu_option == 'd':
+            deposit_value, deposite_date = Deposit(user.balance)
+            user.balance += deposit_value
 
-            withdraws = [
-                Withdraw(date='2024-04-29T02:36:55.437668', value=20.35),
-                Withdraw(date='2024-04-29T02:36:55.437668', value=115.00)
-            ]
+            user.statement[0]['deposits'].append({'date': deposite_date, 'value': deposit_value})
+           
+            print('''
+        |-------------------------------------------------|
+        | Deposit completed succesfuly!                   |
+        |-------------------------------------------------|''')
 
-            funds = 1234567.89
-            Statement(deposits, withdraws, funds)
-        break
-        #Menu()
+        elif menu_option == 'w':
+            withdrawal_value, withdrawal_date = Withdraw(user.daily_withdrawals, user.balance, user.daily_withdrawal_limit)
+            user.balance -= withdrawal_value
+
+            user.daily_withdrawals += 1
+            user.statement[1]['withdrawals'].append({'date': withdrawal_date, 'value': withdrawal_value})
+            
+            print('''
+        |-------------------------------------------------|
+        | Withdrawal completed succesfuly!                |
+        |-------------------------------------------------|''')
+
+        menu_option = Menu()
+
 
 if __name__ == "__main__":
     sys.exit(main())

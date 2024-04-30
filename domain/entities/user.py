@@ -1,10 +1,16 @@
-from core.domain.entity import Entity
+import sys
+import os
 
-class User(Entity):
-    def __init__(self, fund, withdraw_limit, statement, withdraws, WITHDRAW_LIMITE):
-        self.__fund = fund
-        self.__withdraw_limit = withdraw_limit
-        self.__statement = statement
-        self.__withdraws = withdraws
-        self.__withdraw_limite = WITHDRAW_LIMITE
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
+from core.domain import entity
+class User():
+    def __init__(self, balance, daily_withdrawal_limit, daily_withdrawals, DAILY_WITHDRAWAL_LIMIT):
+        self.balance = balance                                     # account balance 
+        self.daily_withdrawal_limit = daily_withdrawal_limit       # daily withdrawal limit
+        self.statement = [{'deposits': []}, {'withdrawals': []}]   # statement object
+        self.daily_withdrawals = daily_withdrawals                 # daily number of withdrawals
+        self.daily_withdrawal_limit = DAILY_WITHDRAWAL_LIMIT       # daily max number of withdrawals
         super().__init__()
+
+
