@@ -33,13 +33,20 @@ def main():
         |-------------------------------------------------|''')
 
         elif menu_option == 'w':
-            withdrawal_value, withdrawal_date = Withdraw(user.daily_withdrawals, user.balance, user.daily_withdrawal_limit)
-            user.balance -= withdrawal_value
+            if user.daily_withdrawals >= user.daily_withdrawal_limit:
+                print('''
+        |-------------------------------------------------|
+        | The daily withdrawal limit has already          |
+        | been reached!                                   |
+        |-------------------------------------------------|''')
+            else :
+                withdrawal_value, withdrawal_date = Withdraw(user.balance)
+                user.balance -= withdrawal_value
 
-            user.daily_withdrawals += 1
-            user.statement[1]['withdrawals'].append({'date': withdrawal_date, 'value': withdrawal_value})
-            
-            print('''
+                user.daily_withdrawals += 1
+                user.statement[1]['withdrawals'].append({'date': withdrawal_date, 'value': withdrawal_value})
+                
+                print('''
         |-------------------------------------------------|
         | Withdrawal completed succesfuly!                |
         |-------------------------------------------------|''')

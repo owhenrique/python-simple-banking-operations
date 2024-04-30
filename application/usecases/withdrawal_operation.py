@@ -1,10 +1,6 @@
 import datetime
 
-def Withdraw(daily_withdraws, account_balance, daily_withdrawal_limit) -> float and str:
-    if daily_withdraws >= daily_withdrawal_limit:
-        print("The daily withdrawal limit has already been reached!")
-        return
-    
+def Withdraw(account_balance) -> float and str:   
     print('''
         |-------------------------------------------------|
         | github/owhenrique Bank                          |
